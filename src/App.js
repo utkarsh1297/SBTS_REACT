@@ -6,7 +6,7 @@ import Home from './Config/Home';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import Detail from './Config/Detail';
 // import Data from "./Config/Data";
-
+ 
 
 class App extends Component{
   constructor(props)
@@ -16,7 +16,9 @@ class App extends Component{
       user : {}
     }
   }
-  componentDidMount()
+
+  // this function is used for handling the event during the processing 
+  componentDidMount() 
   {
     this.authListener();
     
