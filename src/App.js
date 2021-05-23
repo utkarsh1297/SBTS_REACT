@@ -5,7 +5,7 @@ import Login from './Config/Login';
 import Home from './Config/Home';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import Detail from './Config/Detail';
-// import Data from "./Config/Data";
+import Data from "./Config/Data";
  
 
 class App extends Component{
@@ -44,7 +44,7 @@ render()
       <h2>School Bus Tracking System</h2>
       {this.state.user ? (<Detail/>) : (<Login/>)}
        <Home/>
-        {/* <Data/> */}
+         <Data/> 
     </div>
   );
 }

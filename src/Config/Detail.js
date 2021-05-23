@@ -1,8 +1,9 @@
 import React,  { useState } from 'react';
 import { db }  from "../Config/fire";
 import "../App.css";
-
+  
  const Detail = () => {
+
 const [name, setName]  = useState("");
 const [email, setEmail]  =useState("");
 const [mobno, setmobno]  =useState("");
@@ -10,8 +11,14 @@ const [message, setMessage] =useState("");
 
     const handleSubmit = (e) =>{
         e.preventDefault();
+    //     const [posts , setPosts]=useState(
+    //         []);
+    //     useEffect(() => {
+         db.collection("Details")
+    //         setPosts(snapshot.docs.map(doc=>.data() ))
+    //     })
+    //    }, [])
 
-        db.collection("Details")
         .add({
             name:name,
             email:email,
@@ -21,6 +28,7 @@ const [message, setMessage] =useState("");
         .then(() => {
             alert("Detail has been submiteed");
         })
+      
         .catch((error) =>{
             alert(error.message);
         });
@@ -31,6 +39,7 @@ const [message, setMessage] =useState("");
         setMessage(" ");
     };
     return(
+
         <form className="form" onSubmit= {handleSubmit}>
             <h1>Student Detail Form</h1>
             
@@ -63,6 +72,7 @@ const [message, setMessage] =useState("");
              />
             <button type="submit"> Submit </button>
         </form>
+        
     )
 }
 export default Detail;
